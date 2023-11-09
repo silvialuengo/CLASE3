@@ -1,0 +1,53 @@
+import React from 'react';
+
+
+function ProductDetail(props) {
+  
+  const { name, description, price, sku, quantity } = props;
+
+  
+  return (
+  
+    <div className="product-detail">
+    
+      <h1>{name}</h1>
+      
+      <p>{description}</p>
+      
+      <span className="product-price">${price}</span>
+      
+      <span className="product-sku">SKU: {sku}</span>
+      
+      <span className="product-quantity">Cantidad disponible: {quantity}</span>
+    </div>
+  );
+}
+
+import React from 'react';
+
+import ProductDetail from './ProductDetail';
+
+
+function App() {
+  
+  const product = {
+    name: 'CUBIERTA METZELER 120/90-17  ',
+    description: 'Cubierta Metzeler 120/90-17 Enduro Sahara.Compuesto específico, combinando seguridad y agarre en las inclinadas en asfalto y tracción en off-road
+Diseño de la banda de rodadura con autolimpieza para una tracción estable tanto en terrenos blandos como en barro
+Buena maniobrabilidad y facilidad en la entrada en curva, trayectoria estable y alta seguridad cuando se rueda al límite.',
+    price: 1200,
+    sku: 'CUBIERTA METZELER 120/90-17',
+    quantity: 10
+  };
+
+  
+  return (
+    
+    <div className="app">
+      
+      <ProductDetail {...product} />
+    </div>
+  );
+}
+
+export default App;
